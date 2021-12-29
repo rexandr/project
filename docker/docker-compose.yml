@@ -16,14 +16,12 @@ services:
       PHP_POST_MAX_SIZE: 512M
       PHP_DISPLAY_ERRORS: 1
       php.xdebug.max_nesting_level: 500
-#      XDEBUG_CONFIG: "remote_host=172.25.0.1 remote_enable=1 remote_port=9003"
-#      XDEBUG_CONFIG: "remote_enable=1"
     depends_on:
       - a_level_nix_mysql
 
 
   a_level_nix_mysql:
-    build: ./mysql/
+    build: ./mysql
     container_name: a_level_nix_mysql
     environment:
       MYSQL_ROOT_PASSWORD: cbece_gead-cebfa
@@ -32,5 +30,19 @@ services:
       - 3131:3306
     volumes:
       - a_level_nix-db:/var/lib/mysql
+      
+  phpmyadmin:
+   image: phpmyadmin/phpmyadmin:latest
+   restart: always
+   ports:
+     - '8088:80'
+   environment:
+     PMA_ARBITRARY: 0
+     PMA_HOST: 'a_level_nix_mysql'
+     MYSQL_ROOT_PASSWORD: 'cbece_gead-cebfa'
+   depends_on:
+     - a_level_nix_mysql
+
+
 volumes:
   a_level_nix-db:
