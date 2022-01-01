@@ -1,21 +1,29 @@
 <?php
-use frameworkVendor\core\Router;
 
-error_reporting(-1);
+echo 'Start' . '<br>';
 
-$query = rtrim($_SERVER['QUERY_STRING'], '/');
+$query = rtrim($_SERVER['QUERY_STRING'],'/');
+echo '<pre>';
+print_r($query);
+echo '</pre>';
 
-define('LAYOUT', 'default');
 
-spl_autoload_register(function ($class){
-    $file = dirname(__DIR__) . '/' . str_replace('\\', '/', $class) . '.php';
-    if (is_file($file)){
-        require_once $file;
-    }
-});
+require '../vendor/core/Router.php';
 
-Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
+Router::add('posts/add', ['controller' => 'Posts', 'action' => 'add']);
+Router::add('posts', ['controller' => 'Posts', 'action' => 'index']);
+Router::add('', ['controller' => 'Main', 'action' => 'index']);
 
-Router::add('^login', ['controller' => 'Login', 'action' => 'index']);
+if (Router::matchRoute($query)) {
+    echo 'Route' . '<br>';
+    echo '<pre>';
+    print_r(Router::getRoute());
+    echo '</pre>';
+} else {
+    include '404.html';
+}
 
-Router::dispatch($query);
+echo 'Routes' . '<br>';
+echo '<pre>';
+print_r(Router::getRoutes());
+echo '</pre>';
