@@ -7,3 +7,4 @@ CMD /tmp/run_script
 RUN chmod +x run_script
 
 WORKDIR /var/www/html
+
