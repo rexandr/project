@@ -1,4 +1,8 @@
 <?php
+use vendor\core\Router;
+use app\controllers\Posts;
+
+error_reporting(-1);
 
 echo 'Start' . '<br>';
 
@@ -22,7 +26,7 @@ echo 'ROOT =>'.ROOT."<br>";
 echo '</b></pre>';
 
 
-require '../vendor/core/Router.php';
+//require '../vendor/core/Router.php';
 //require '../app/controllers/Main.php';
 //require '../app/controllers/Posts.php';
 //require '../app/controllers/PostsNew.php';
@@ -30,8 +34,9 @@ require '../vendor/core/Router.php';
 //autoload called class if exists
 spl_autoload_register(function ($class)
 {
-    //complaining file path
-   $file = APP."/controllers/$class.php";
+    //complaining any class's path before run
+    $file = ROOT . '/' . str_replace('\\', '/', $class) . '.php';
+echo $file.'<br>';
    //checking if file exists through the path
    if (is_file($file))
    {
@@ -44,7 +49,8 @@ spl_autoload_register(function ($class)
 //Router::add('', ['controller' => 'Main', 'action' => 'index']);
 
 //add custom rout if we need unusual behavior
-Router::add('^pages/?(?P<action>[a-z-]+)?$', ['controller' => 'Posts']);
+Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
+Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
 
 //DEFAULT ROUTS
 // if url string is empty

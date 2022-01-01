@@ -1,5 +1,7 @@
 <?php
 
+namespace vendor\core;
+
 class Router
 {
 
@@ -45,6 +47,7 @@ class Router
                 if (!isset($route['action'])) {
                     $route['action'] = 'index';
                 }
+                $route['controller'] = self::upperCamelCase($route['controller']);
                 //set upping current route
                 self::$route = $route;
                 return true;
@@ -56,15 +59,22 @@ class Router
     //find controller and run action
     public static function dispatch($url)
     {
+        //remove GET parameters from $url
+        $url = self::removeQueryString($url);
         //checking if we have the route
         if (Router::matchRoute($url)) {
-            //rebuild controller title to camel case
-            $controller = self::upperCamelCase(self::$route['controller']);
+            //set path to controllers and rebuild controller's title to camel case
+            $controller = '\app\controllers\\'.self::$route['controller'];
+            
+            echo '<pre>';
+            print_r(self::$route);
+            echo '</pre>';
+            
             //cheeking if controller exists
             if (class_exists($controller))
             {
                 //controller run
-                $classObj = new $controller;
+                $classObj = new $controller(self::$route);
                 //action defining
                 $action = self::lowerCamelCase(self::$route['action']).'Action';
 
@@ -100,6 +110,24 @@ class Router
         $name = str_replace('-', ' ', $name);
         $name = ucwords($name);
         return lcfirst(str_replace(' ', '', $name));
+    }
+
+    //remove GET parameters from $url
+    protected static function removeQueryString($url)
+    {
+        if ($url) //if url not empty
+        {
+            //divide url to pieces
+            $params = explode('&', $url);
+            //if first element is not GET parameter return it and cut last slash OR null
+            if (false === strpos($params[0], '='))
+                {
+                    return rtrim($params[0],'/');
+                }else{
+                    return '';
+                }
+        }
+        return $url;
     }
 
 }
