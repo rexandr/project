@@ -1,16 +1,12 @@
 <?php
 
 namespace app\controllers;
-use vendor\core\base\Controller;
+use app\controllers\App;
 
-class Posts extends Controller
+class Posts extends App
 {
     public function indexAction()
     {
-        echo '<pre>';
-        print_r($this->route);
-        echo '</pre>';
-        
-        echo __CLASS__.__FUNCTION__.'<br>';
+
     }
 }

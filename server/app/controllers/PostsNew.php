@@ -2,19 +2,18 @@
 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
+use app\controllers\App;
 
-class PostsNew extends Controller
+class PostsNew extends App
 {
     public function indexAction()
     {
 
-        echo __CLASS__.__FUNCTION__.'<br>';
     }
 
     public function testPageAction()
     {
-        echo __CLASS__.__FUNCTION__.'<br>';
+
     }
 
 }

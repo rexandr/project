@@ -4,31 +4,24 @@ namespace vendor\core;
 
 class Router
 {
+    protected static array $routes = []; //all routes - patterns
+    protected static array $route = [];  //current route
 
-//    public function __construct()
-//    {
-//        echo __CLASS__.' - - '.__FUNCTION__.' - - '.__DIR__;
-//    }
-
-    protected static $routes = []; //all routes - patterns
-    protected static $route = [];  //current route
-
-    //add routes' patterns to array
+    //add routes' patterns from index file to $routes
     public static function add($regExp, $route = [])
     {
         self::$routes[$regExp] = $route;
     }
 
-    public static function getRoutes()
+    public static function getRoutes(): array
     {
         return self::$routes;
     }
 
-    public static function getRoute()
+    public static function getRoute(): array
     {
         return self::$route;
     }
-
 
     //checking if we can accept such route
     public static function matchRoute($url): bool
@@ -65,11 +58,7 @@ class Router
         if (Router::matchRoute($url)) {
             //set path to controllers and rebuild controller's title to camel case
             $controller = '\app\controllers\\'.self::$route['controller'];
-            
-            echo '<pre>';
-            print_r(self::$route);
-            echo '</pre>';
-            
+
             //cheeking if controller exists
             if (class_exists($controller))
             {
@@ -82,17 +71,16 @@ class Router
                 if (method_exists($classObj, $action))
                 {
                     $classObj->$action();
+                    $classObj->getView();
                 }else{
                     echo "Action <b>$action</b> does not exist in <b>$controller</b><br>";
                 }
-
-                echo "Class <b>$controller</b> exists<br>";
             }else{
                 echo "Class <b>$controller</b> does not exist!<br>";
             }
         } else {
             http_response_code(404);
-            include '404.html';
+            include PUB.'404.html';
         }
     }
 
@@ -105,7 +93,7 @@ class Router
     }
 
     //rebuild kebabCase title of controller to camelCase all first symbols to Upper exclude first
-    protected static function lowerCamelCase($name)
+    protected static function lowerCamelCase($name): string
     {
         $name = str_replace('-', ' ', $name);
         $name = ucwords($name);
@@ -119,7 +107,7 @@ class Router
         {
             //divide url to pieces
             $params = explode('&', $url);
-            //if first element is not GET parameter return it and cut last slash OR null
+            //if first element is not GET parameter return it and cut out last slash OR return null
             if (false === strpos($params[0], '='))
                 {
                     return rtrim($params[0],'/');

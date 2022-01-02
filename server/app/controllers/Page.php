@@ -1,16 +1,14 @@
 <?php
 
 namespace app\controllers;
+use app\controllers\App;
 
-class Page extends \vendor\core\base\Controller
+class Page extends App
 {
 
     public function viewAction()
     {
-        echo '<pre>';
-        print_r($_GET);
-        echo '</pre>';
-        echo __CLASS__ . __FUNCTION__ . '<br>';
+
     }
 
 }
