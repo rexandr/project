@@ -31,8 +31,8 @@ class Db
         return self::$connect;
     }
 
-    //operate query with create command
-    public function executeCreate($sql)
+    //operate query with create, alter, drop command
+    public function executeCreate($sql, $params = [])
     {
         //increase number of queries after each
         self::$countSql++;
@@ -41,10 +41,10 @@ class Db
         //prepare sql query
         $stmt = $this->pdo->prepare($sql);
         //commit sql and return true or false
-        return $stmt->execute();
+        return $stmt->execute($params);
     }
 
-    public function executeSelect($sql)
+    public function executeSelect($sql, $params = [])
     {
         //increase number of queries after each
         self::$countSql++;
@@ -53,7 +53,7 @@ class Db
         //prepare sql query
         $stmt = $this->pdo->prepare($sql);
         //commit sql and return true or false
-        $res =  $stmt->execute();
+        $res =  $stmt->execute($params);
         //if $res true there are some data which should be returned
         if ($res !== false)
         {

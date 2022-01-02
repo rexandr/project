@@ -3,3 +3,5 @@
     <h1><?=$val['name']?></h1>
     <h6><?=$val['age']?></h6>
 <?php endforeach; ?>
+
+<?= $findOne[0]['name']?>
