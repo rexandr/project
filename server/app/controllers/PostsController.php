@@ -1,9 +1,9 @@
 <?php
 
 namespace app\controllers;
-use app\controllers\App;
+use app\controllers\AppController;
 
-class Posts extends App
+class PostsController extends AppController
 {
     public function indexAction()
     {

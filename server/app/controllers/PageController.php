@@ -1,9 +1,9 @@
 <?php
 
 namespace app\controllers;
-use app\controllers\App;
+use app\controllers\AppController;
 
-class Page extends App
+class PageController extends AppController
 {
 
     public function viewAction()

@@ -15,6 +15,9 @@
 
 <?=$content?>
 
+Number of executed queries: <?= \vendor\core\Db::$countSql ?><br>
+List of executed queries: <?= var_dump(\vendor\core\Db::$queries) ?><br>
+
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

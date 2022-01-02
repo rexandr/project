@@ -57,7 +57,7 @@ class Router
         //checking if we have the route
         if (Router::matchRoute($url)) {
             //set path to controllers and rebuild controller's title to camel case
-            $controller = '\app\controllers\\'.self::$route['controller'];
+            $controller = '\app\controllers\\'.self::$route['controller'].'Controller';
 
             //cheeking if controller exists
             if (class_exists($controller))
