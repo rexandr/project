@@ -8,7 +8,7 @@ class Db extends Singleton//handmade
 {
     protected $pdo;
 
-    //protected static $connect;
+    //protected static $connect; //old singleton
 
     public static $countSql = 0;
     public static $queries = [];
@@ -22,6 +22,8 @@ class Db extends Singleton//handmade
         $this->pdo = new \PDO($config['dsn'],$config['user'],$config['pass'],$config['options']);
     }
 
+
+    //OLD singleton
 //    //check connection and return if exist or create new
 //    public static function getSingletone()
 //    {
@@ -34,6 +36,8 @@ class Db extends Singleton//handmade
 //        //return connection
 //        return self::$connect;
 //    }
+
+
 
     //operate query with create, alter, drop command
     public function executeCreate($sql, $params = [])

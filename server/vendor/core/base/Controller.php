@@ -13,8 +13,6 @@ abstract class Controller
     {
         $this-> route = $route;
         $this->view = $route['action'];
-        //$this->getView();
-        //include APP . "/views/{$route['controller']}/{$this->view}.php";
     }
 
     public function getView()
