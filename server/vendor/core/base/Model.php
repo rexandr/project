@@ -11,7 +11,8 @@ abstract class Model
 
     public function __construct()
     {
-        $this->pdo = Db::getSingletone();
+        $this->pdo = Db::getSingleton();
+        //$this->pdo = Db::getSingletone(); //old
     }
 
     public function query($sql)
