@@ -11,22 +11,14 @@ abstract class FileModel
     {
         $this->openedFile = File::getSingleton();
         //$this->read();
-        $this->writeToFile();
     }
 
-    public function read()
+    public function write()
     {
-        echo 'ARRAY';
-        $array = (array) $this->openedFile;
-        echo '<pre>';
-        print_r($array);
-        echo '</pre>';
+       $this->openedFile->writeToFile();
     }
 
-    public function writeToFile($message = 'default\n')
-    {
-        return fwrite($this->openedFile, $message);
-    }
+
 
 
 }

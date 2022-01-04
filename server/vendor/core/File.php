@@ -14,35 +14,19 @@ class File extends Singleton
 
 //       $this->file = file_get_contents(PUB.'/files/file.txt');
        $this->file = fopen(PUB.'/files/file.txt', 'a+');
-        
-        
-        foreach ($this->file as $kay)
-        {
-            echo $kay.'<br>';
-        }
-        $this->getFileContent();
 
     }
 
 
     public function getFileContent()
     {
-//        foreach ($this->file as $kay)
-//        {
-//            echo $kay.'<br>';
-//        }
-//
-       echo 'getFileContent()';
-        foreach ($this->file as $kay)
-        {
-            echo $kay.'<br>';
-        }
-        echo '<pre>';
-        var_dump($this->file);
-        echo '</pre>';
+        return $this->file;
 
+    }
 
-        //return $this->file;
+    public function writeToFile($message = 'default\n')
+    {
+        return fwrite($this->file, $message);
     }
 
 

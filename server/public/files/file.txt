@@ -1,2 +1,3 @@
 TEST_FILE
 Second Line
+default\ndefault\ndefault\n

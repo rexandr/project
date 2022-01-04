@@ -11,16 +11,8 @@ class FileController extends Controller
     public function indexAction()
     {
 
-
         $file = new File();
-
-        $content = $file->read();
-
-        foreach ($content as $kay)
-        {
-            echo $kay.'<br>';
-        }
-
+        $file->write();
 //        echo '<pre>';
 //        print_r($file->getFileContent());
 //        echo '</pre>';

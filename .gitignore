@@ -1,2 +1,5 @@
 .idea
-/server/supervisord.*
+*.log
+*.pid
+.htaccess
+server/config/config_db.php
