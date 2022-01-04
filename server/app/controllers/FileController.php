@@ -12,13 +12,11 @@ class FileController extends Controller
     {
 
         $file = new File();
-        $file->write();
-//        echo '<pre>';
-//        print_r($file->getFileContent());
-//        echo '</pre>';
-        //$file->writeToFile('test from controller');
-        $this->set(compact('file'));
-        //return true;
+
+        $fileContent = $file->read();
+
+        $this->set(compact('fileContent'));
+
     }
 
 }

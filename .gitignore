@@ -2,4 +2,11 @@
 *.log
 *.pid
 .htaccess
+server/public/home.htaccess
+server/public/work.htaccess
+server/supervisord.log
+server/supervisord.pid
 server/config/config_db.php
+https://github.com/rexandr/project/blob/c64ce57ddb53c12330a0db4b0b89bcebb4ac83f2/server/config/config_db.php
+https://github.com/rexandr/project/blob/c64ce57ddb53c12330a0db4b0b89bcebb4ac83f2/server/supervisord.log
+https://github.com/rexandr/project/blob/c64ce57ddb53c12330a0db4b0b89bcebb4ac83f2/server/supervisord.pid
