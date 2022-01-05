@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\controllers\AppController;
-use app\models\Main;
+use app\models\Db;
 
 class MainController extends AppController
 {
@@ -19,7 +19,7 @@ class MainController extends AppController
 //        //changing view and layout for current action
 //        $this->view = 'test';
         $this->layout = 'default';
-        $model = new Main();
+        //$model = new Db();
 //        $test = $model->findAll();
 //        $findOne = $model->findOne('vasya', 'name');
 //        $customSelect = $model->findByCustomSql("SELECT * FROM {$model->table} WHERE name LIKE ?", ['%ya']);

@@ -4,8 +4,7 @@ namespace app\models;
 
 use vendor\core\base\Model;
 
-class Main extends Model
+class Db extends Model
 {
     public $table = 'test';
-    public $filter = 'age';
 }

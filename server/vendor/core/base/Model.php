@@ -12,12 +12,20 @@ abstract class Model
     public function __construct()
     {
         $this->pdo = Db::getSingleton();
-        //$this->pdo = Db::getSingletone(); //old
     }
 
     public function query($sql)
     {
         return $this->pdo->executeCreate($sql);
+    }
+
+    public function save($params)
+    {
+        $value = implode("','", $params);
+        $keys = implode(",", array_keys($params));
+        $sql = "INSERT $this->table ($keys) VALUES ('$value');";
+        $this->query($sql);
+        return true;
     }
 
     public function findAll()

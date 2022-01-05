@@ -3,10 +3,10 @@
 namespace app\controllers;
 use app\controllers\AppController;
 
-class PageController extends AppController
+class UserController extends AppController
 {
 
-    public function viewAction()
+    public function indexAction()
     {
 
     }

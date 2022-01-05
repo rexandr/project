@@ -27,8 +27,8 @@ spl_autoload_register(function ($class)
 });
 
 //add custom routs if we need unusual behavior
-Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
-Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
+Router::add('^user/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'User']);
+Router::add('^user/(?P<alias>[a-z-]+)$', ['controller' => 'User', 'action' => 'view']);
 
 //DEFAULT ROUTS
 // if url string is empty
@@ -59,10 +59,10 @@ Router::dispatch($query);
 //echo '</b></pre>';
 
 //require '../vendor/core/Router.php';
-//require '../app/controllers/Main.php';
-//require '../app/controllers/Posts.php';
+//require '../app/controllers/Db.php';
+//require '../app/controllers/Db.php';
 //require '../app/controllers/PostsNew.php';
 
-//Router::add('posts/add', ['controller' => 'Posts', 'action' => 'add']);
-//Router::add('posts', ['controller' => 'Posts', 'action' => 'index']);
-//Router::add('', ['controller' => 'Main', 'action' => 'index']);
+//Router::add('posts/add', ['controller' => 'Db', 'action' => 'add']);
+//Router::add('posts', ['controller' => 'Db', 'action' => 'index']);
+//Router::add('', ['controller' => 'Db', 'action' => 'index']);

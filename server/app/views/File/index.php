@@ -1,3 +1,4 @@
+<a href="/">HOME</a>
 <h1>File - Index</h1>
 
 <form action="/file" method="post">
