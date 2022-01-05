@@ -11,12 +11,12 @@ abstract class FileModel
         $this->openedFile = File::getSingleton();
     }
 
-    public function read()
+    public function read(): array
     {
         return $this->openedFile->getFileContent();
     }
 
-    public function write($message = 'default')
+    public function write($message = ['Vasya', 'Pupkin'])
     {
        $this->openedFile->writeToFile($message);
     }

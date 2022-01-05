@@ -8,7 +8,7 @@ use app\models\Main;
 class MainController extends AppController
 {
     //change layout for all actions og current class
-    public $layout = 'main';
+    //public $layout = 'main';
 
     public function indexAction()
     {

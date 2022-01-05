@@ -34,6 +34,7 @@ class File extends Singleton
 
     public function writeToFile($message)
     {
+        $message = implode("_", $message);
         return fwrite($this->file, $message . PHP_EOL);
     }
 
