@@ -10,4 +10,10 @@ class SuccessController extends Controller
     {
 
     }
+
+    public function signinAction()
+    {
+
+    }
+
 }
