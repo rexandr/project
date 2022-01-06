@@ -61,7 +61,7 @@ Router::dispatch($query);
 //require '../vendor/core/Router.php';
 //require '../app/controllers/Db.php';
 //require '../app/controllers/Db.php';
-//require '../app/controllers/PostsNew.php';
+//require '../app/controllers/Register.php';
 
 //Router::add('posts/add', ['controller' => 'Db', 'action' => 'add']);
 //Router::add('posts', ['controller' => 'Db', 'action' => 'index']);

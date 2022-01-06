@@ -6,5 +6,4 @@ use \vendor\core\base\FileModel;
 
 class File extends FileModel
 {
-
 }

@@ -7,6 +7,7 @@ abstract class Model
 {
     protected $pdo;
     protected $table;
+    protected $source; //???????????
     protected $filter = 'id';
 
     public function __construct()
@@ -24,8 +25,15 @@ abstract class Model
         $value = implode("','", $params);
         $keys = implode(",", array_keys($params));
         $sql = "INSERT $this->table ($keys) VALUES ('$value');";
-        $this->query($sql);
-        return true;
+        //echo $sql;
+        
+        if ($this->query($sql))
+        {
+            return true;
+        }
+
+        return false;
+
     }
 
     public function findAll()
