@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use \vendor\core\base\Controller;
+use app\controllers\AppController;
 use app\models\File;
 
-class FileController extends Controller
+class FileController extends AppController
 {
 
     public function indexAction()

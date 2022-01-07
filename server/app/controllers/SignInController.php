@@ -21,6 +21,7 @@ class SignInController extends Controller
             $model->update('password', password_hash($newPass, PASSWORD_DEFAULT), 'email', $user[0]['email']);
             imap_mail($user[0]['email'], 'Your new password', $newPass);
             header('/sign-in');
+            return true;
         }
 
 //        echo '<pre>';

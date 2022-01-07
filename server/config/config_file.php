@@ -2,5 +2,5 @@
 
 return [
     'txt' => '/files/file.txt',
-    'csv' => '/file/file.csv',
+    'csv' => '/files/file.csv',
 ];

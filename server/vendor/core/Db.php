@@ -15,9 +15,24 @@ class Db extends Singleton//handmade
     protected function __construct()
     {
         //take config data
-        $config = require ROOT . '/config/config_db.php';
+        if (isset($_SESSION['config']))
+        {
+            $config = $_SESSION['config'];
+        }else{
+            $config = require ROOT . '/config/config_db.php';
+        }
+        //echo $r = 'mysql:host='.$config['host'].':'.$config['port'].';dbname='.$config['db'].';charset=utf8',$config['user'],$config['pass'];
+
         //create connection
-        $this->pdo = new \PDO($config['dsn'],$config['user'],$config['pass'],$config['options']);
+        $this->pdo = new \PDO('mysql:host='.$config['host'].':'.$config['port'].';dbname='.$config['db'].';charset=utf8',$config['user'],$config['pass'],[
+            \PDO::ATTR_DEFAULT_FETCH_MODE =>\PDO::FETCH_ASSOC,  //transfer only assoc data from all queries
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,      //show all errors from DB
+        ]);  //options
+
+
+
+//        echo $r = $config['dsn'],$config['user'],$config['pass'];
+//        $this->pdo = new \PDO($config['dsn'],$config['user'],$config['pass'],$config['options']);
     }
 
     //operate query with create, alter, drop command

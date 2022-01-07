@@ -11,7 +11,7 @@
     <title>Start page!</title>
 </head>
 <body>
-<h1>Start page!</h1>
+<!--<h1>Start page!</h1>-->
 
 <?=$content?>
 
