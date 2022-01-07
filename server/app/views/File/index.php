@@ -8,9 +8,8 @@
 </form>
 
 <?php echo '<pre>';
-var_dump($fileContent);
+foreach ($fileContent as $line)
+{
+    echo htmlspecialchars($line).'<br>';
+}
 echo '</pre>';?>
-
-<?php //foreach ($file as $k=>$f): ?>
-<!--<h1>--><?//= print_r($f); ?><!--</h1>-->
-<?php //endforeach; ?>

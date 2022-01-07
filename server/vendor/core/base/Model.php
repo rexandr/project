@@ -23,9 +23,9 @@ abstract class Model
     public function save($params)
     {
         $value = implode("','", $params);
+        $value = htmlspecialchars($value);
         $keys = implode(",", array_keys($params));
         $sql = "INSERT $this->table ($keys) VALUES ('$value');";
-        //echo $sql;
         
         if ($this->query($sql))
         {
@@ -34,6 +34,18 @@ abstract class Model
 
         return false;
 
+    }
+
+    public function update($field, $value, $where, $filter)
+    {
+        $sql = "UPDATE $this->table SET $field = '$value' WHERE $where = '$filter';";
+        echo $sql.'<br>';
+        if ($this->query($sql))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public function findAll()

@@ -20,10 +20,6 @@ class Singleton
         {
             self::$singletons[$subclass] = new static;
         }
-
-//        echo '<pre>';
-//        print_r(self::$singletons);
-//        echo '</pre>';
         
         return self::$singletons[$subclass];
     }

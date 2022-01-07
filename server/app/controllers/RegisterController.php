@@ -22,11 +22,8 @@ class RegisterController extends AppController
             $reg ['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $model = new User();
             $model->save($reg);
-            header("Location:/success/reg");
+            header("Location:/sign-in");
         }
-
-
-
     }
 
 }

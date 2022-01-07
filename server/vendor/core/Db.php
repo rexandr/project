@@ -23,10 +23,6 @@ class Db extends Singleton//handmade
     //operate query with create, alter, drop command
     public function executeCreate($sql, $params = [])
     {
-        //increase number of queries after each
-        self::$countSql++;
-        //save every executed query
-        self::$queries = $sql;
         //prepare sql query
         $stmt = $this->pdo->prepare($sql);
         //commit sql and return true or false
@@ -35,10 +31,6 @@ class Db extends Singleton//handmade
 
     public function executeSelect($sql, $params = [])
     {
-        //increase number of queries after each
-        self::$countSql++;
-        //save every executed query
-        self::$queries = $sql;
         //prepare sql query
         $stmt = $this->pdo->prepare($sql);
         //commit sql and return true or false

@@ -1,5 +1,7 @@
 <?php
+
 namespace vendor\core\base;
+
 use vendor\core\File;
 
 abstract class FileModel
@@ -18,10 +20,8 @@ abstract class FileModel
 
     public function write($message = ['Vasya', 'Pupkin'])
     {
-       $this->openedFile->writeToFile($message);
+        $this->openedFile->writeToFile($message);
     }
-
-
 
 
 }

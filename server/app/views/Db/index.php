@@ -9,6 +9,11 @@
 
 <?php
 echo '<pre>';
-print_r($allFromTest);
-echo '</pre>';
-?>
+foreach ($allFromTest as $line)
+{
+    $line = implode('_', $line);
+    echo htmlspecialchars($line) . '<br>';
+}
+echo '</pre>'; ?>
+
+
