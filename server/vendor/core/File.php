@@ -6,14 +6,14 @@ use vendor\core\base\Singleton;
 
 class File extends Singleton
 {
-    //private $filePath = PUB.'/files/file.txt';
-
     private $file;
 
-    protected function __construct()
+    protected function __construct($filePath)
     {
-        $config = require ROOT . '/config/config_file.php';
-        $this->file = fopen(PUB . $config['txt'], 'a+');//
+        $this->file = fopen(PUB . $filePath, 'a+');
+
+//        $config = require ROOT . '/config/config_file.php';
+//        $this->file = fopen(PUB . $config['txt'], 'a+');//
     }
 
     public function getFileContent()

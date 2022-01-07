@@ -12,13 +12,13 @@ class Singleton
 
     protected function __wakeup(){}
 
-    public static function getSingleton()
+    public static function getSingleton($filePath = '')
     {
         $subclass = static::class;
 
         if (!isset(self::$singletons[$subclass]))
         {
-            self::$singletons[$subclass] = new static;
+            self::$singletons[$subclass] = new static($filePath);
         }
         
         return self::$singletons[$subclass];

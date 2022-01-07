@@ -10,10 +10,10 @@ abstract class FileModel
 
     public function __construct()
     {
-        $this->openedFile = File::getSingleton();
+        $this->openedFile = File::getSingleton("/files/file.txt");
     }
 
-    public function read(): array
+    public function read()
     {
         return $this->openedFile->getFileContent();
     }
