@@ -1,4 +1,5 @@
-<a href="/">HOME</a>
+<a href="/">HOME</a><br>
+<a href="/register">Registration.</a><br>
 <h1>SignIn - Index</h1>
 
 <?php

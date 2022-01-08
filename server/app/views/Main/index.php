@@ -1,5 +1,6 @@
 <h1>Main - Index</h1>
-<a href="/file">Work with file.</a><br>
+<a href="/file">Work with txt.</a><br>
+<a href="/csv">Work with csv.</a><br>
 <a href="/db">Work with DB.</a><br>
 <a href="/configs">CONFIGS.</a><br>
 <a href="/register">Registration.</a><br>

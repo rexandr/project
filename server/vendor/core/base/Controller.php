@@ -2,7 +2,8 @@
 
 namespace vendor\core\base;
 
-abstract class Controller
+
+abstract class Controller implements \vendor\core\interfaces\ConnectInterface
 {
     public $route = [];
     public $view;
@@ -11,7 +12,8 @@ abstract class Controller
 
     public function __construct($route)
     {
-        if (!isset($_SESSION['name']))
+
+        if (!isset($_SESSION['name']) && $route['controller'] !== 'Register')
         {
             $route = [
                 'controller' => 'SignIn',

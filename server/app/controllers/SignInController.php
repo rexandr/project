@@ -4,16 +4,19 @@ namespace app\controllers;
 
 //use app\controllers\AppController;
 use app\models\User;
-use vendor\core\base\Controller;
+use app\controllers\AppController;
 
-class SignInController extends Controller
+class SignInController extends AppController
 {
     public function indexAction()
     {
         //$msg = 'Message';
 
         $model = new User();
-        $user = $model->findOne($_POST['name'], 'name');
+        if (isset($_POST['name']))
+        {
+            $user = $model->findOne($_POST['name'], 'name');
+        }
 
         if (isset($_POST['forgot'])&&($user[0]['email']===$_POST['email']))
         {
@@ -23,10 +26,6 @@ class SignInController extends Controller
             header('/sign-in');
             return true;
         }
-
-//        echo '<pre>';
-//        print_r($_POST);
-//        echo '</pre>';
         
         if (isset($_POST['name']))
         {

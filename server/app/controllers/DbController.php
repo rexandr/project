@@ -6,20 +6,22 @@ use app\models\Db;
 
 class DbController extends AppController
 {
-
-
     public function indexAction()
     {
-        $db = new Db();
-        if (isset($_POST['name'])&&isset($_POST['age']))
-        {
-            $db->save($_POST);
-            header("Location:/db");
-        }
+        $this->model = new Db();
+        $this->connect($_SESSION['source']);
 
-        $allFromTest = $db->findAll();
 
-        $this->set(compact('allFromTest'));
 
+//        $db = new Db();
+//        if (isset($_POST['name']))
+//        {
+//            $db->write($_POST);
+//            header("Location:/db");
+//        }
+//
+//        $allFromTest = $db->read();
+//
+//        $this->set(compact('allFromTest'));
     }
 }

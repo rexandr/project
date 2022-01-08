@@ -20,7 +20,7 @@ abstract class Model
         return $this->pdo->executeCreate($sql);
     }
 
-    public function save($params)
+    public function write($params)
     {
         $value = implode("','", $params);
         $value = htmlspecialchars($value);
@@ -48,7 +48,7 @@ abstract class Model
         return false;
     }
 
-    public function findAll()
+    public function read()//findAll
     {
         $sql = "SELECT * FROM {$this->table}";
         return $this->pdo->executeSelect($sql);

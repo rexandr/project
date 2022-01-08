@@ -14,17 +14,17 @@ class MainController extends AppController
     public function indexAction()
     {
         $db = new Db();
-        $file = new File();
-        $allFromTest = $db->findAll();
+        $file = new File("/files/file.txt");
+        $csv = new File("/files/file.csv");
+        $allFromTest = $db->read();
         $lines = [];
         foreach ($allFromTest as $line)
         {
             $lines [] = implode('_', $line);
-
         }
-
         $fileAll = $file->read();
-        $all = array_merge($lines, $fileAll);
+        $csvAll = $csv->read();
+        $all = array_merge($lines, $fileAll, $csvAll);
 //        echo '<pre>';
 //        print_r($all);
 //        echo '</pre>';
