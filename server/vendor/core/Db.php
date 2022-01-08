@@ -8,9 +8,6 @@ class Db extends Singleton//handmade
 {
     protected $pdo;
 
-    public static $countSql = 0;
-    public static $queries = [];
-
     //create connection
     protected function __construct()
     {
@@ -28,8 +25,6 @@ class Db extends Singleton//handmade
             \PDO::ATTR_DEFAULT_FETCH_MODE =>\PDO::FETCH_ASSOC,  //transfer only assoc data from all queries
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,      //show all errors from DB
         ]);  //options
-
-
 
 //        echo $r = $config['dsn'],$config['user'],$config['pass'];
 //        $this->pdo = new \PDO($config['dsn'],$config['user'],$config['pass'],$config['options']);

@@ -8,9 +8,9 @@ abstract class FileModel
 {
     protected $openedFile;
 
-    public function __construct()
+    public function __construct($r)
     {
-        $this->openedFile = File::getSingleton("/files/file.txt");
+        $this->openedFile = File::getSingleton($r);
     }
 
     public function read()

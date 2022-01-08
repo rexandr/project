@@ -5,29 +5,22 @@
 <a href="/register">Registration.</a><br>
 <a href="/sign-in">SignIn</a><br>
 <a href="/log-out">Log Out</a><br>
-<form action="" method="post">
+<form action="/configs" method="post">
     <select name="select">
-        <option value="db">Data Base</option>
-        <option value="file" selected>Txt File</option>
-        <option value="csv">Csv File</option>
+        <option value="/db">Data Base</option>
+        <option value="/file" selected>Txt File</option>
+        <option value="/csv">Csv File</option>
     </select>
     <input type="submit" value="OK">
 </form>
 
 <?php
-if (isset($_POST['txt']))
+if (isset($_POST['txt'])||isset($_POST['csv'])||isset($_POST['host']))
 {
     $_SESSION['config'] = $_POST;
+
+    $_POST = [];
 }
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
-//if (isset($_POST['select']))
-//{
-//    $r = $_POST['select'];
-//    header("$r");
-//}
-//var_dump($_POST['select']);
 
 foreach ($all as $line)
 {

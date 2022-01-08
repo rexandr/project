@@ -11,7 +11,7 @@ class DbController extends AppController
     public function indexAction()
     {
         $db = new Db();
-        if ($_POST)
+        if (isset($_POST['name'])&&isset($_POST['age']))
         {
             $db->save($_POST);
             header("Location:/db");

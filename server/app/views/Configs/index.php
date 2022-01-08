@@ -1,4 +1,5 @@
-<form action="/" method="post">
+<form action="<?=$source?>" method="post">
+<!--<form action="/" method="post">-->
     <label for="txt">Provide TXT:</label>
     <input type="text" name="txt" value="/files/file.txt" id="txt">
     <br>

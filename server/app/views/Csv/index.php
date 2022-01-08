@@ -1,7 +1,7 @@
 <a href="/">HOME</a>
-<h1>File - Index</h1>
+<h1>Csv - Index</h1>
 
-<form action="/file" method="post">
+<form action="/csv" method="post">
     <input type="text" name="name" value="Petruk">
     <input type="text" name="secondname" value="Pyatochkin">
     <input type="submit" value="Send">

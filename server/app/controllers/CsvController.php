@@ -5,23 +5,18 @@ namespace app\controllers;
 use app\models\File;
 use app\controllers\AppController;
 
-class FileController extends AppController
+class CsvController extends AppController
 {
-
     public function indexAction()
     {
-        $file = new File("/files/file.txt");
-
+        $file = new File("/files/file.csv");
         $fileContent = $file->read();
-
         if(isset($_POST['name'])&&isset($_POST['secondname']))
         {
             $file->write($_POST);
-            header("Location:/file");
+            header("Location:/csv");
         }
-
         $this->set(compact('fileContent'));
 
     }
-
 }
