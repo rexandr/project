@@ -2,14 +2,14 @@
 
 namespace app\controllers;
 
-use app\models\File;
+use app\models\Csv;
 use app\controllers\AppController;
 
 class CsvController extends AppController
 {
     public function indexAction()
     {
-        $this->model = new File("/files/file.csv");
+        $this->model = new Csv("/files/file.csv");
         $this->connect($_SESSION['source']);
 
 //        $file = new File("/files/file.csv");
