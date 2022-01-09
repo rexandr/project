@@ -15,22 +15,25 @@
     <input type="submit" value="OK">
 </form>
 
+
+<?php foreach($all as $line):?>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p><?=$line?>></p>
+        </blockquote>
+    </figure>
+<?php endforeach; ?>
+
 <?php
-//if (isset($_POST['txt'])||isset($_POST['csv'])||isset($_POST['host']))
+
+//foreach ($all as $line)
 //{
-//    $_SESSION['config'] = $_POST;
-//
-//    $_POST = [];
+//    echo htmlspecialchars($line).'<br>';
 //}
 
-foreach ($all as $line)
-{
-    echo htmlspecialchars($line).'<br>';
-}
 
-
-if (isset($msg))
-{
-    echo '<h1>'.$msg.'</h1>';
-}
+//if (isset($msg))
+//{
+//    echo '<h1>'.$msg.'</h1>';
+//}
 ?>
