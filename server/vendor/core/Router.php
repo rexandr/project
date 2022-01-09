@@ -80,7 +80,7 @@ class Router
             }
         } else {
             http_response_code(404);
-            include PUB.'404.html';
+            include PUB.'/404.html';
         }
     }
 
