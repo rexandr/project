@@ -1,5 +1,5 @@
-<a href="/">HOME</a>
-<h1>Csv - Index</h1>
+<!--<a href="/">HOME</a>-->
+<!--<h1>Csv - Index</h1>-->
 
 <form action="/csv" method="post">
     <input type="text" name="name" value="Petruk">

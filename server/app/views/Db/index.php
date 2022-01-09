@@ -1,5 +1,5 @@
-<a href="/">HOME</a>
-<h1>Db - Index</h1>
+<!--<a href="/">HOME</a>-->
+<!--<h1>Db - Index</h1>-->
 
 <form action="/db" method="post">
     <input type="text" name="name" value="Petruk"><br>

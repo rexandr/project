@@ -1,6 +1,7 @@
 <?php
 
 namespace app\controllers;
+
 use app\controllers\AppController;
 use app\models\Db;
 
@@ -8,10 +9,11 @@ class DbController extends AppController
 {
     public function indexAction()
     {
-        $this->from = 'Data From Db - ';
         $this->model = new Db();
-        $this->connect($_SESSION['source']);
+        if (isset($_SESSION['source'])) {
+            $this->connect($_SESSION['source']);
 
+        }
 
 
 //        $db = new Db();

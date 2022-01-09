@@ -9,8 +9,12 @@ class CsvController extends AppController
 {
     public function indexAction()
     {
-        $this->model = new Csv($_SESSION['config']['csv']);
-        $this->connect($_SESSION['source']);
+        if (isset($_SESSION['source']))
+        {
+            $this->model = new Csv($_SESSION['config']['csv']);
+            $this->connect($_SESSION['source']);
+        }
+
 
 //        $file = new File("/files/file.csv");
 //        $fileContent = $file->read();

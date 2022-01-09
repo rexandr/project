@@ -11,8 +11,11 @@ class FileController extends AppController
 
     public function indexAction()
     {
-        $this->model = new File($_SESSION['config']['txt']);
-        $this->connect($_SESSION['source']);
+        if (isset($_SESSION['source']))
+        {
+            $this->model = new File($_SESSION['config']['txt']);
+            $this->connect($_SESSION['source']);
+        }
     }
 
 }

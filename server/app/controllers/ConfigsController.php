@@ -9,13 +9,14 @@ class ConfigsController extends AppController
         if (isset($_POST['select']))
         {
             $_SESSION['source'] = $_POST['select'];
+            $_POST = [];
+
+            $source = $_SESSION['source'];
+
+            $this->set(compact('source'));
         }
 
-        $_POST = [];
 
-        $source = $_SESSION['source'];
-
-        $this->set(compact('source'));
         //header("/");
     }
 

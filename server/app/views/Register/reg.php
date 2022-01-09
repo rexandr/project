@@ -1,3 +1,3 @@
-<a href="/">HOME</a>
-
-<h1>Register - Reg</h1>
+<!--<a href="/">HOME</a>-->
+<!---->
+<!--<h1>Register - Reg</h1>-->

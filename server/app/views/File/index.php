@@ -1,5 +1,5 @@
-<a href="/">HOME</a>
-<h1>File - Index</h1>
+<!--<a href="/">HOME</a>-->
+<!--<h1>File - Index</h1>-->
 
 <form action="/file" method="post">
     <input type="text" name="name" value="Petruk">

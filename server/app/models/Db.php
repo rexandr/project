@@ -53,7 +53,7 @@ class Db extends Model
         $lines = [];
         foreach ($this->pdo->executeSelect($sql) as $line)
         {
-            $lines [] = implode('_', $line);
+            $lines [] = 'Data From Db - ' . implode('_', $line);
         }
         return $lines;
     }
