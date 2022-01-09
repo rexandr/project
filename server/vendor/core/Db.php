@@ -2,9 +2,9 @@
 
 namespace vendor\core;
 
-use vendor\core\base\Singleton;//handmade
+use vendor\core\base\Singleton;
 
-class Db extends Singleton//handmade
+class Db extends Singleton
 {
     protected $pdo;
 

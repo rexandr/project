@@ -11,8 +11,7 @@ class FileController extends AppController
 
     public function indexAction()
     {
-        $this->from = 'Data From TXT - ';
-        $this->model = new File("/files/file.txt");
+        $this->model = new File($_SESSION['config']['txt']);
         $this->connect($_SESSION['source']);
     }
 

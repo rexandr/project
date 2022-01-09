@@ -16,12 +16,12 @@
 </form>
 
 <?php
-if (isset($_POST['txt'])||isset($_POST['csv'])||isset($_POST['host']))
-{
-    $_SESSION['config'] = $_POST;
-
-    $_POST = [];
-}
+//if (isset($_POST['txt'])||isset($_POST['csv'])||isset($_POST['host']))
+//{
+//    $_SESSION['config'] = $_POST;
+//
+//    $_POST = [];
+//}
 
 foreach ($all as $line)
 {

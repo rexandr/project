@@ -2,13 +2,13 @@
 
 namespace app\models;
 
-use \vendor\core\base\FileModel;
+use \vendor\core\base\Model;
 use vendor\core\base\Singleton;
 
-class File extends FileModel
+class File extends Model
 {
     public function __construct($r)
     {
-        parent::__construct($r);
+        $this->openedFile = \vendor\core\File::getSingleton($r);
     }
 }

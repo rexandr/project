@@ -2,13 +2,13 @@
 
 namespace app\models;
 
-use \vendor\core\base\CsvModel;
+use \vendor\core\base\Model;
 use vendor\core\base\Singleton;
 
-class Csv extends CsvModel
+class Csv extends Model
 {
     public function __construct($r)
     {
-        parent::__construct($r);
+        $this->openedFile = \vendor\core\Csv::getSingleton($r);
     }
 }

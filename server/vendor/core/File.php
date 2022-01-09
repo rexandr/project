@@ -19,13 +19,15 @@ class File extends Singleton
     public function getFileContent()
     {
         $fileToArray = [];
-
+        $class = get_class($this);
+        $res = explode("\\",$class);
+        $index = array_pop($res);
         if ($this->file) {
             while (($buffer = fgets($this->file)) !== false) {
                 if (trim($buffer) === '') {
                     continue;
                 }
-                $fileToArray[] = $buffer;
+                $fileToArray[] = 'Data from - '. $index .' - '.$buffer;
             }
         }
 

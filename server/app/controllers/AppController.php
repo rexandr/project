@@ -12,7 +12,10 @@ class AppController extends \vendor\core\base\Controller
     {
         $fileContent = $this->model->read();
 
-        $fileContent = array_map(fn($k)=>$this->from.$k,$fileContent);
+        if ($this->from !== '')
+        {
+            $fileContent = array_map(fn($line)=>$this->from.$line,$fileContent);
+        }
 
         if(isset($_POST['name']))
         {

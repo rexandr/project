@@ -1,8 +1,3 @@
-TEST_FILE
-Second Line
-Petruk_Pyatochkin
-Petruk_Pyatochkin
-Petruk_Pyatochkin
-Petruk_Pyatochkin
+TXTTXTTXTTXTXTXTXTXTXTXTXTXTXT
 Petruk_Pyatochkin
 Petruk_Pyatochkin
