@@ -8,6 +8,7 @@ class DbController extends AppController
 {
     public function indexAction()
     {
+        $this->from = 'Data From Db - ';
         $this->model = new Db();
         $this->connect($_SESSION['source']);
 

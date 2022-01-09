@@ -51,7 +51,12 @@ abstract class Model
     public function read()//findAll
     {
         $sql = "SELECT * FROM {$this->table}";
-        return $this->pdo->executeSelect($sql);
+        $lines = [];
+        foreach ($this->pdo->executeSelect($sql) as $line)
+        {
+            $lines [] = implode('_', $line);
+        }
+        return $lines;
     }
 
     public function findOne($id, $field = '')

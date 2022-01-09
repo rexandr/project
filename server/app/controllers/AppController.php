@@ -6,10 +6,14 @@ use app\models\File;
 class AppController extends \vendor\core\base\Controller
 {
     protected $model = '';
+    protected $from = '';
 
     public function connect($forward)
     {
         $fileContent = $this->model->read();
+
+        $fileContent = array_map(fn($k)=>$this->from.$k,$fileContent);
+
         if(isset($_POST['name']))
         {
             $this->model->write($_POST);
@@ -17,4 +21,5 @@ class AppController extends \vendor\core\base\Controller
         }
         $this->set(compact('fileContent'));
     }
+
 }

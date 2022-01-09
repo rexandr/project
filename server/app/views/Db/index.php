@@ -11,7 +11,6 @@
 echo '<pre>';
 foreach ($fileContent as $line)
 {
-    $line = implode('_', $line);
     echo htmlspecialchars($line) . '<br>';
 }
 echo '</pre>'; ?>

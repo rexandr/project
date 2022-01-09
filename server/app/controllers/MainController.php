@@ -18,17 +18,14 @@ class MainController extends AppController
         $file = new File("/files/file.txt");
         $csv = new Csv("/files/file.csv");
         $allFromTest = $db->read();
-        $lines = [];
-        foreach ($allFromTest as $line)
-        {
-            $lines [] = implode('_', $line);
-        }
+//        $lines = [];
+//        foreach ($allFromTest as $line)
+//        {
+//            $lines [] = implode('_', $line);
+//        }
         $fileAll = $file->read();
         $csvAll = $csv->read();
-        echo '<pre>';
-        print_r($csvAll);
-        echo '</pre>';
-        $all = array_merge($lines, $fileAll, $csvAll);
+        $all = array_merge($allFromTest, $fileAll, $csvAll);
 
 
 //        //changing view and layout for current action

@@ -8,8 +8,10 @@ use app\controllers\AppController;
 class FileController extends AppController
 {
 
+
     public function indexAction()
     {
+        $this->from = 'Data From TXT - ';
         $this->model = new File("/files/file.txt");
         $this->connect($_SESSION['source']);
     }

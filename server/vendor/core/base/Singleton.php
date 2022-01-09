@@ -20,9 +20,9 @@ class Singleton
         {
             self::$singletons[$subclass] = new static($filePath);
         }
-        echo '<pre>';
-        print_r(self::$singletons);
-        echo '</pre>';
+//        echo '<pre>';
+//        print_r(self::$singletons);
+//        echo '</pre>';
         return self::$singletons[$subclass];
     }
 }
