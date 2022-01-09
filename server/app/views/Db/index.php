@@ -17,6 +17,13 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<?php foreach($fileContent as $line):?>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p><?=$line?>></p>
+        </blockquote>
+    </figure>
+<?php endforeach; ?>
 
 <!---->
 <!---->
@@ -25,14 +32,14 @@
 <!--    <input type="text" name="name" value="Petruk"><br>-->
 <!--    <input type="text" name="age" value="25"><br>-->
 <!--    <input type="submit" value="Send"><br>-->
-<!--</form>-->
-
+<!--<!--</form>-->-->
+<!---->
 <?php
-echo '<pre>';
-foreach ($fileContent as $line)
-{
-    echo htmlspecialchars($line) . '<br>';
-}
-echo '</pre>'; ?>
+//echo '<pre>';
+//foreach ($fileContent as $line)
+//{
+//    echo htmlspecialchars($line) . '<br>';
+//}
+//echo '</pre>'; ?>
 
 
