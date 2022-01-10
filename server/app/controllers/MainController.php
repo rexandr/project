@@ -15,18 +15,13 @@ class MainController extends AppController
     public function indexAction()
     {
         $db = new Db();
-        $file = new File("/files/file.txt");
-        $csv = new Csv("/files/file.csv");
+        $file = new File($_SESSION['config']['txt']);
+        $csv = new Csv($_SESSION['config']['csv']);
         $allFromTest = $db->read();
-//        $lines = [];
-//        foreach ($allFromTest as $line)
-//        {
-//            $lines [] = implode('_', $line);
-//        }
+
         $fileAll = $file->read();
         $csvAll = $csv->read();
         $all = array_merge($allFromTest, $fileAll, $csvAll);
-
 
 //        //changing view and layout for current action
 //        $this->view = 'test';

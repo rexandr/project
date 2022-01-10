@@ -20,14 +20,14 @@ class File extends Singleton
     {
         $fileToArray = [];
         $class = get_class($this);
-        $res = explode("\\",$class);
+        $res = explode("\\", $class);
         $index = array_pop($res);
         if ($this->file) {
             while (($buffer = fgets($this->file)) !== false) {
                 if (trim($buffer) === '') {
                     continue;
                 }
-                $fileToArray[] = 'Data from - '. $index .' - '.$buffer;
+                $fileToArray[] = 'Data from - ' . $index . ' - ' . $buffer;
             }
         }
 
@@ -40,10 +40,4 @@ class File extends Singleton
         $message = htmlspecialchars($message);
         return fwrite($this->file, $message . PHP_EOL);
     }
-
-
-//    protected function __destruct()
-//    {
-//        fclose($this->file);
-//    }
 }

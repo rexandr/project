@@ -11,9 +11,6 @@ class Csv extends Singleton
     protected function __construct($filePath)
     {
         $this->file = fopen(PUB . $filePath, 'a+');
-
-//        $config = require ROOT . '/config/config_file.php';
-//        $this->file = fopen(PUB . $config['txt'], 'a+');//
     }
 
     public function getFileContent()
@@ -40,9 +37,4 @@ class Csv extends Singleton
         return fwrite($this->file, $message . PHP_EOL);
     }
 
-
-//    protected function __destruct()
-//    {
-//        fclose($this->file);
-//    }
 }

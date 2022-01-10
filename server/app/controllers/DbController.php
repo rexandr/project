@@ -12,19 +12,7 @@ class DbController extends AppController
         $this->model = new Db();
         if (isset($_SESSION['source'])) {
             $this->connect($_SESSION['source']);
-
         }
 
-
-//        $db = new Db();
-//        if (isset($_POST['name']))
-//        {
-//            $db->write($_POST);
-//            header("Location:/db");
-//        }
-//
-//        $allFromTest = $db->read();
-//
-//        $this->set(compact('allFromTest'));
     }
 }

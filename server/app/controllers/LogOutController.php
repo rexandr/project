@@ -1,6 +1,7 @@
 <?php
 
 namespace app\controllers;
+
 use app\controllers\AppController;
 
 class LogOutController extends AppController

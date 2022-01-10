@@ -1,6 +1,7 @@
 <?php
 
 namespace vendor\core\base;
+
 use vendor\core\Db;
 use vendor\core\interfaces\DataAction;
 
