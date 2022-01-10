@@ -3,7 +3,7 @@ session_start();
 use vendor\core\Router;
 use app\controllers\Posts;
 
-error_reporting(-1);
+//error_reporting(-1);
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');
 

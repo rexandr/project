@@ -14,9 +14,20 @@ class MainController extends AppController
 
     public function indexAction()
     {
+        $txt ="/files/file.txt";
+        $csv ="/files/file.csv";
+        if (isset($_SESSION['config']['txt']))
+        {
+            $txt = $_SESSION['config']['txt'];
+        }
+        if (isset($_SESSION['config']['csv']))
+        {
+            $txt = $_SESSION['config']['csv'];
+        }
+
         $db = new Db();
-        $file = new File($_SESSION['config']['txt']);
-        $csv = new Csv($_SESSION['config']['csv']);
+        $file = new File($txt);
+        $csv = new Csv($csv);
         $allFromTest = $db->read();
 
         $fileAll = $file->read();
